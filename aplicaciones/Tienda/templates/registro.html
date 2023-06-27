@@ -1,0 +1,68 @@
+{% extends './base.html' %}
+
+{% block body %}
+    <h1>
+        Registro
+    </h1>
+
+
+
+    <div class="container">
+        <div class="container">
+            <h4 onload="mostrarHora()" class="hora" id="miReloj"></h4>
+        </div>
+        <h1 class="text-center mt-3">Crear Cuenta</h1><br>
+        <div class="row abs-center">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3  mb-5">
+                <div onload= "validarform()" class="form">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="txtNombre" required>
+                        <label for="txtNombre" class="form-label">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="txtApellido" required>
+                        <label for="txtApellido" class="form-label">Apellido</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="txtEmail" required>
+                        <label for="txtEmail" class="form-label">Correo</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="txtContraseña" required>
+                        <label for="txtContraseña" class="form-label">Contraseña</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="SKU" required>
+                        <label for="date" class="form-label">Fecha de Nacimiento</label>
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select mb-3" aria-label="Default select example" required>
+                            <option selected disabled>Género</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Femenino</option>
+                        </select>
+                    </div>
+                    <button onclick="validarform()" type="submit" class="btn btn-primary mb-3">Registrar</button>
+                    <div>
+                        <label for="">¿Ya tienes una cuenta? </label><a href="login.html">Inicia Sesion</a>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="https://www.Instagram.com" class="nav-link px-2 text-muted"
+                        target="_blank">Instagram</a></li>
+                <li class="nav-item"><a href="https://www.Facebook.com" class="nav-link px-2 text-muted"
+                        target="_blank">Facebook</a></li>
+            </ul>
+            <p class="text-center text-muted">©2023 PawPetShop</p>
+        </footer>
+    </div>
+{% endblock %}

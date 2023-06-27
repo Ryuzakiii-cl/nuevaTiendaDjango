@@ -1,0 +1,80 @@
+{% extends './base.html' %}
+
+{% block body %}
+    <h1>
+        Cuidados
+    </h1>
+
+
+    <div class="container text-justify">
+        <div class="container">
+            <h4 onload="mostrarHora()" class="hora" id="miReloj"></h4>
+        </div>
+        <div class="inicio row text-center">
+            <h1>Servicio de cuidados</h1>
+            <p class="text-center text-justify">
+                Los mejores cuidados y la mejor atencion que tu mascota se merece los encuentras en PawPetShop
+            </p>
+        </div>
+        <div class="row pel">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <img src="img/peluqueria.jpeg" class="img-fluid" alt="..." width="400px">
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container text-justify pt-5">
+        <div class="row text-center">
+            <div class="row text-center">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Peluqueria</h5>
+                            <p class="card-text">Porque cada mascota merece verse bien, contamos con los mejores veteriarios
+                                estilistas para darle un toque fashion a tu mascota .</p>
+                            <a href="" class="btn btn-info">Contratar Servicio</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Limpieza y Desparasitación </h5>
+                            <p class="card-text">No dejes que tus mascotas sean portadores de pulgas y garrapatas, con
+                                nuestro servicio de Desparasitación dile adios a esos parasitos.</p>
+                            <a href="" class="btn btn-info">Contratar Servicio</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Veterinaria Móvil</h5>
+                            <p class="card-text">Porque sabemos que tu tiempo es oro, nosotros vamos a tu casa a entregarte
+                                los mejores servicios como si estuvieras en nuestra clinica.</p>
+                            <a href="" class="btn btn-info">Contratar Servicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+
+    <div class="row">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="https://www.Instagram.com" class="nav-link px-2 text-muted"
+                        target="_blank">Instagram</a></li>
+                <li class="nav-item"><a href="https://www.Facebook.com" class="nav-link px-2 text-muted"
+                        target="_blank">Facebook</a></li>
+            </ul>
+            <p class="text-center text-muted">©2023 PawPetShop</p>
+        </footer>
+    </div>
+{% endblock %}

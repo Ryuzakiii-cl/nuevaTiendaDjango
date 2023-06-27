@@ -1,0 +1,262 @@
+function load(){
+    cambiarTema();
+    mostrarHora();
+    latitudLongitud();
+    validarform();
+    validarLogin();
+    ready();
+    aumentar();
+    disminuir();
+}
+
+//funcion para cambiar a modo oscuro
+const cambiarTema = () => {
+    var element = document.body;
+    element.dataset.bsTheme =
+    element.dataset.bsTheme == "dark" ? "light" : "dark";
+}
+
+//Funcion Para ver la Hora
+function mostrarHora() {
+    var date = new Date();
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+
+    var time = h + ":" + m + ":" + s;
+    document.getElementById("miReloj").innerText = time;
+    document.getElementById("miReloj").textContent = time;
+
+    setTimeout(mostrarHora, 1000);
+}
+
+mostrarHora();
+
+
+//API CLIMA
+
+function latitudLongitud(posicion) {
+    const latitud = posicion.coords.latitude;
+    const longitud = posicion.coords.longitude;
+    const appiKey = "061a4498b7aa87b95991921a3203b048";
+    const unidadMedida = "metric";
+    const comunaHtml = document.getElementById("comuna");
+    const tiempo = document.querySelector(".tiempo");
+
+    fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitud}&longitude=${longitud}&localityLanguage=es`
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            const comuna = data.locality;
+            comunaHtml.innerHTML += comuna;
+        });
+
+    fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&appid=${appiKey}&units=${unidadMedida}`
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            const iconoTiempo = document.createElement("img");
+            console.log(tiempo);
+            const iconoTiempoUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            iconoTiempo.src = iconoTiempoUrl;
+            tiempo.appendChild(iconoTiempo);
+            comunaHtml.innerHTML += " " + Math.round(data.main.temp) + "°C";
+        });
+}
+
+navigator.geolocation.getCurrentPosition(latitudLongitud);
+
+
+//Funcion para validar formularios
+function validarform() {
+    var datosCorrectos = true;
+    var error = "";
+    nombre = document.getElementById("txtNombre").value;
+    apellido = document.getElementById("txtApellido").value;
+    correo = document.getElementById("txtEmail").value;
+    contraseña = document.getElementById("txtContraseña").value;
+
+
+    var exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //datos del usuario
+    if (nombre == "" && apellido == "" && correo == "" && contraseña == "") {
+        document.getElementById("txtNombre").style.borderColor = "red";
+        document.getElementById("txtApellido").style.borderColor = "red";
+        document.getElementById("txtEmail").style.borderColor = "red";
+        document.getElementById("txtContraseña").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Esta vacio el formulario";
+    }
+
+    else if (nombre == "") {
+        document.getElementById("txtNombre").focus();
+        document.getElementById("txtNombre").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Llene el campo nombre";
+    }
+
+
+    else if (apellido == "") {
+        document.getElementById("txtApellido").focus();
+        document.getElementById("txtApellido").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Llene el campo apellido";
+    }
+
+    else if (correo == "") {
+        document.getElementById("txtEmail").focus();
+        document.getElementById("txtEmail").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Llene el campo correo";
+    }
+
+    else if (!exp.test(document.getElementById("txtEmail").value)) {
+        document.getElementById("txtEmail").focus();
+        document.getElementById("txtEmail").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Email Invalido";
+    }
+
+    else if (contraseña == "") {
+        document.getElementById("txtContraseña").focus();
+        document.getElementById("txtContraseña").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Llene el campo contraseña";
+    }
+
+    else if (contraseña.length < 8) {
+        document.getElementById("txtContraseña").focus();
+        document.getElementById("txtContraseña").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n El campo contraseña debe de tener mas de 8 caracteres ";
+    }
+
+    //Aqui manda el mensaje diciendo el error
+    if (error != '') {
+        alert('El formulario dice:' + error);
+    } else {
+        return true;
+    }
+}
+
+//funcion para validar login
+function validarLogin() {
+    var datosCorrectos = true;
+    var error = "";
+    email = document.getElementById("txtUser").value;
+    password = document.getElementById("txtPass").value;
+
+    var exp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //datos del usuario
+    if (email == "" && password == "") {
+        document.getElementById("txtUser").style.borderColor = "red";
+        document.getElementById("txtPass").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Los campos estan vacios";
+    }
+    else if (email == "") {
+        document.getElementById("txtUser").focus();
+        document.getElementById("txtUser").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Llene el campo correo";
+    }
+
+    else if (!exp.test(document.getElementById("txtUser").value)) {
+        document.getElementById("txtUser").focus();
+        document.getElementById("txtUser").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Email Invalido";
+    }
+
+    else if (password == "") {
+        document.getElementById("txtPass").focus();
+        document.getElementById("txtPass").style.borderColor = "red";
+        datosCorrectos = false;
+        error = "\n Llene el campo contraseña";
+    }
+
+    if (error != '') {
+        alert('El formulario dice:' + error);
+    } else {
+        return true;
+    }
+}
+
+
+//funcion para aumentar o disminuir la cantidad de productos
+
+var inicio = 0; 
+function aumentar(){ 
+var cantidad = document.getElementById('cantidad').value = ++inicio; 
+}
+function disminuir(){ 
+var cantidad = document.getElementById('cantidad').value = --inicio; 
+}
+
+
+var inicio2 = 0; 
+function aumentar2(){ 
+var cantidad2 = document.getElementById('cantidad2').value = ++inicio2; 
+}
+function disminuir2(){ 
+var cantidad2 = document.getElementById('cantidad2').value = --inicio2; 
+}
+
+
+var inicio3 = 0; 
+function aumentar3(){ 
+var cantidad3 = document.getElementById('cantidad3').value = ++inicio3; 
+}
+function disminuir3(){ 
+var cantidad3 = document.getElementById('cantidad3').value = --inicio3; 
+}
+
+
+var inicio4 = 0; 
+function aumentar4(){ 
+var cantidad4 = document.getElementById('cantidad4').value = ++inicio4; 
+}
+function disminuir4(){ 
+var cantidad4 = document.getElementById('cantidad4').value = --inicio4; 
+}
+
+
+var inicio5 = 0; 
+function aumentar5(){ 
+var cantidad5 = document.getElementById('cantidad5').value = ++inicio5; 
+}
+function disminuir5(){ 
+var cantidad5 = document.getElementById('cantidad5').value = --inicio5; 
+}
+
+
+var inicio6 = 0; 
+function aumentar6(){ 
+var cantidad6 = document.getElementById('cantidad6').value = ++inicio6; 
+}
+function disminuir6(){ 
+var cantidad6 = document.getElementById('cantidad6').value = --inicio6; 
+}
+
+
+/* Funcion para ocultar contraseña */
+
+function password(){
+    let input = document.getElementById("txtPass");
+
+    if (input.type == "password") {
+        input.type = "text";
+        document.getElementById("ocultar").style.display = "inline";
+        document.getElementById("mostrar").style.display = "none";
+    }else{
+        input.type = "password";
+        document.getElementById("ocultar").style.display = "none";
+        document.getElementById("mostrar").style.display = "inline";
+    }
+}

@@ -1,0 +1,43 @@
+.text-justify{
+    text-align: justify;
+}
+
+.card:hover{
+    opacity: 0.7;
+}
+
+.card-text{
+    text-align: justify;
+}
+
+#txtComment{
+    resize: none;
+}
+
+@media (max-width: 576px){
+    .card-text{
+        font-size: 0.8rem;
+    }
+}
+
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30vh;
+}
+
+.pel{
+    justify-content: center;
+}
+
+.navbar a{
+    font-size: 18px;
+
+}
+
+.navbar a:hover{
+    border-radius: 10px;
+    background: rgb(163, 165, 42);
+}
+
