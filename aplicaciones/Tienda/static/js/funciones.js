@@ -42,7 +42,7 @@ mostrarHora();
 function latitudLongitud(posicion) {
     const latitud = posicion.coords.latitude;
     const longitud = posicion.coords.longitude;
-    const appiKey = "061a4498b7aa87b95991921a3203b048";
+    const appiKey = "be464cbb53e1e91ac8514a4b17b5cd72";
     const unidadMedida = "metric";
     const comunaHtml = document.getElementById("comuna");
     const tiempo = document.querySelector(".tiempo");
