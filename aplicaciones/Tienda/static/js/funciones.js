@@ -191,82 +191,6 @@ function validarLogin() {
 
 //funcion para aumentar o disminuir la cantidad de productos
 
-/* var inicio = 0; 
-function aumentar(){ 
-var cantidad = document.getElementById('cantidad').value = ++inicio; 
-}
-function disminuir(){ 
-var cantidad = document.getElementById('cantidad').value = --inicio; 
-} */
-
-/* 
-var inicio2 = 0; 
-function aumentar2(){ 
-var cantidad2 = document.getElementById('cantidad2').value = ++inicio2; 
-}
-function disminuir2(){ 
-var cantidad2 = document.getElementById('cantidad2').value = --inicio2; 
-}
-
-
-var inicio3 = 0; 
-function aumentar3(){ 
-var cantidad3 = document.getElementById('cantidad3').value = ++inicio3; 
-}
-function disminuir3(){ 
-var cantidad3 = document.getElementById('cantidad3').value = --inicio3; 
-}
-
-
-var inicio4 = 0; 
-function aumentar4(){ 
-var cantidad4 = document.getElementById('cantidad4').value = ++inicio4; 
-}
-function disminuir4(){ 
-var cantidad4 = document.getElementById('cantidad4').value = --inicio4; 
-}
-
-
-var inicio5 = 0; 
-function aumentar5(){ 
-var cantidad5 = document.getElementById('cantidad5').value = ++inicio5; 
-}
-function disminuir5(){ 
-var cantidad5 = document.getElementById('cantidad5').value = --inicio5; 
-}
-
-
-var inicio6 = 0; 
-function aumentar6(){ 
-var cantidad6 = document.getElementById('cantidad6').value = ++inicio6; 
-}
-function disminuir6(){ 
-var cantidad6 = document.getElementById('cantidad6').value = --inicio6; 
-} */
-
-
-/* Funcion para ocultar contraseña */
-
-function password(){
-    let input = document.getElementById("txtPass");
-
-    if (input.type == "password") {
-        input.type = "text";
-        document.getElementById("ocultar").style.display = "inline";
-        document.getElementById("mostrar").style.display = "none";
-    }else{
-        input.type = "password";
-        document.getElementById("ocultar").style.display = "none";
-        document.getElementById("mostrar").style.display = "inline";
-    }
-}
-
-
-
-
-
-
-
 // Obtener referencias a los elementos HTML
 const botonesSumar = document.querySelectorAll('[data-accion="sumar"]');
 const botonesRestar = document.querySelectorAll('[data-accion="restar"]');
@@ -311,3 +235,20 @@ botonesSumar.forEach(function (boton) {
 botonesRestar.forEach(function (boton) {
     boton.addEventListener('click', restarUno);
 });
+
+
+/* Funcion para ocultar contraseña */
+
+function password(){
+    let input = document.getElementById("txtPass");
+
+    if (input.type == "password") {
+        input.type = "text";
+        document.getElementById("ocultar").style.display = "inline";
+        document.getElementById("mostrar").style.display = "none";
+    }else{
+        input.type = "password";
+        document.getElementById("ocultar").style.display = "none";
+        document.getElementById("mostrar").style.display = "inline";
+    }
+}
