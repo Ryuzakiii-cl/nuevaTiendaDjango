@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg bg-success">
         <img src="img/logot.png" alt="" width="150px">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><ion-icon name="home"></ion-icon> Inicio</a>
+            <a class="navbar-brand" href="{% url 'inicio' %}"><ion-icon name="home"></ion-icon> Inicio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true"
                 aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/productos.html"><ion-icon
+                        <a class="nav-link active" aria-current="page" href="{% url 'productos' %}"><ion-icon
                                 name="basket"></ion-icon> Productos</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -35,16 +35,16 @@
                             <ion-icon name="heart"></ion-icon> Servicios
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item btn-success" href="c/uidados.html">Cuidados</a></li>
-                            <li><a class="dropdown-item btn-success" href="/veterinaria.html">Veterinaria</a></li>
+                            <li><a class="dropdown-item btn-success" href="{% url 'cuidados' %}">Cuidados</a></li>
+                            <li><a class="dropdown-item btn-success" href="{% url 'veterinaria' %}">Veterinaria</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/carrito.html"><ion-icon
+                        <a class="nav-link active" aria-current="page" href="{% url 'carrito' %}"><ion-icon
                                 name="cart"></ion-icon> Compras</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/login.html"><ion-icon
+                        <a class="nav-link active" aria-current="page" href="{% url 'login' %}"><ion-icon
                                 name="person"></ion-icon> Ingresar</a>
                     </li>
                     <div class="form-check form-switch mx-2 mt-2">
