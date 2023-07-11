@@ -191,19 +191,15 @@ function validarLogin() {
 
 //funcion para aumentar o disminuir la cantidad de productos
 
-var inicio = 0; 
+/* var inicio = 0; 
 function aumentar(){ 
-/*     if(inicio < 0){ */
-var cantidad = document.getElementById('cantidad').value = ++inicio;/*  }
-        else{
-            var inicio = 0; 
-        } */
+var cantidad = document.getElementById('cantidad').value = ++inicio; 
 }
 function disminuir(){ 
 var cantidad = document.getElementById('cantidad').value = --inicio; 
-}
+} */
 
-
+/* 
 var inicio2 = 0; 
 function aumentar2(){ 
 var cantidad2 = document.getElementById('cantidad2').value = ++inicio2; 
@@ -246,7 +242,7 @@ var cantidad6 = document.getElementById('cantidad6').value = ++inicio6;
 }
 function disminuir6(){ 
 var cantidad6 = document.getElementById('cantidad6').value = --inicio6; 
-}
+} */
 
 
 /* Funcion para ocultar contraseña */
@@ -264,3 +260,54 @@ function password(){
         document.getElementById("mostrar").style.display = "inline";
     }
 }
+
+
+
+
+
+
+
+// Obtener referencias a los elementos HTML
+const botonesSumar = document.querySelectorAll('[data-accion="sumar"]');
+const botonesRestar = document.querySelectorAll('[data-accion="restar"]');
+const inputsResultado = document.querySelectorAll('.input-resultado');
+
+// Establecer los valores iniciales de los inputs
+inputsResultado.forEach(function (input) {
+    input.value = 0;
+});
+
+// Función para sumar 1 al input correspondiente
+function sumarUno(event) {
+    const boton = event.target;
+    const inputId = boton.getAttribute('data-target');
+    const input = document.getElementById(inputId);
+    let valorActual = parseInt(input.value);
+    if (valorActual < 0) {
+        // Si el valor es negativo, establecerlo en 0
+        input.value = 0;
+    } else {
+        input.value = valorActual + 1;
+    }
+}
+
+// Función para restar 1 al input correspondiente
+function restarUno(event) {
+    const boton = event.target;
+    const inputId = boton.getAttribute('data-target');
+    const input = document.getElementById(inputId);
+    let valorActual = parseInt(input.value);
+    if (valorActual > 0) {
+        input.value = valorActual - 1;
+    }
+}
+
+// Agregar eventos de clic a los botones de suma
+botonesSumar.forEach(function (boton) {
+    boton.addEventListener('click', sumarUno);
+});
+
+// Agregar eventos de clic a los botones de resta
+botonesRestar.forEach(function (boton) {
+    boton.addEventListener('click', restarUno);
+});
