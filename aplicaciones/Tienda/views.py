@@ -1,4 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import *
+import os
+from django.conf import settings
+from django.http import HttpResponse
+import json
+
 
 # Create your views here.
 def cargarInicio(request):
