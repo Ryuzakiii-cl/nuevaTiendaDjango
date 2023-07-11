@@ -1,4 +1,5 @@
 {% extends './base.html' %}
+{% load static %}
 
 {% block body %}
     <h1>
@@ -18,7 +19,7 @@
         </div>
         <div class="row pel">
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <img src="img/peluqueria.jpeg" class="img-fluid" alt="..." width="400px">
+                <img src="{% static 'img/peluqueria.jpeg' %}" class="img-fluid" alt="..." width="400px">
             </div>
         </div>
     </div>

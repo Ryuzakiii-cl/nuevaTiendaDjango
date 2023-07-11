@@ -1,4 +1,5 @@
 {% extends './base.html' %}
+{% load static %}
 
 {% block body %}
     <h1>
@@ -48,7 +49,7 @@
                     </div>
                     <button onclick="validarLogin()" type="submit" class="btn btn-primary mb-3">Iniciar Sesion</button>
                     <div>
-                        <label for="">¿No tienes una cuenta?    </label><a href="registro.html">Registrate</a>
+                        <label for="">¿No tienes una cuenta?    </label><a href="{% url 'registro' %}">Registrate</a>
                     </div>
                 </form>
             </div>
