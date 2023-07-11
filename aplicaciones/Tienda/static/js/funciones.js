@@ -255,6 +255,9 @@ function password(){
 
 
 
+/* DE AQUI HACIA ABAJO AGREGO FUNCIONES NUEVAS */
+
+
 /*Funcion para agregar productos*/
 const formulario = document.getElementById("agregarProductoForm");
 
