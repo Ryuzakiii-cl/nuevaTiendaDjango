@@ -9,7 +9,6 @@
     <div class="container">
         <h4 onload="mostrarHora()" class="hora" id="miReloj"></h4>
     </div>
-    
     <body>
         <div class="container">
             <h3 class="bg-info ">Listado de productos</h3>
@@ -26,14 +25,13 @@
                 <tbody>
                     <tr>
                         <th scope="row ">
-                            <div onload="ready()" class="cantidad">
-                                <div class="selector-cantidad">
-                                    <button onclick="disminuir()" class="btn btn-primary " id="disminuir">-</button>
-                                    <input id="cantidad" type="text" value="0"
-                                        class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
-                                    <button onclick="aumentar()" class="btn btn-primary " id="aumentar">+</button>
-                                </div>
+                            <div onload= "ready()" class="cantidad">
+                            <div class="selector-cantidad">
+                                <button onclick="disminuir()" class="btn btn-primary " id="disminuir">-</button>
+                                <input id="cantidad" type="text" value="0" class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
+                                <button onclick="aumentar()" class="btn btn-primary " id="aumentar">+</button>
                             </div>
+                        </div>
                         </th>
                         <td>CHAMPION CAT - Alimento mojado gato</td>
                         <td>$12.000</td>
@@ -65,14 +63,13 @@
                             </div>
                         </td>
                     </tr>
-    
+                    
                     <tr>
                         <th scope="row">
-                            <div onload="sumarCantidad()" class="cantidad">
+                            <div onload= "sumarCantidad()" class="cantidad">
                                 <div class="selector-cantidad">
                                     <button onclick="disminuir2()" class="btn btn-primary " id="disminuir">-</button>
-                                    <input id="cantidad2" type="text" value="0"
-                                        class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
+                                    <input id="cantidad2" type="text" value="0" class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
                                     <button onclick="aumentar2()" class="btn btn-primary " id="aumentar">+</button>
                                 </div>
                             </div>
@@ -110,11 +107,10 @@
                     </tr>
                     <tr>
                         <th scope="row">
-                            <div onload="sumarCantidad()" class="cantidad">
+                            <div onload= "sumarCantidad()" class="cantidad">
                                 <div class="selector-cantidad">
                                     <button onclick="disminuir3()" class="btn btn-primary " id="disminuir">-</button>
-                                    <input id="cantidad3" type="text" value="0"
-                                        class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
+                                    <input id="cantidad3" type="text" value="0" class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
                                     <button onclick="aumentar3()" class="btn btn-primary " id="aumentar">+</button>
                                 </div>
                             </div>
@@ -152,11 +148,10 @@
                     </tr>
                     <tr>
                         <th scope="row">
-                            <div onload="sumarCantidad()" class="cantidad">
+                            <div onload= "sumarCantidad()" class="cantidad">
                                 <div class="selector-cantidad">
                                     <button onclick="disminuir4()" class="btn btn-primary " id="disminuir">-</button>
-                                    <input id="cantidad4" type="text" value="0"
-                                        class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
+                                    <input id="cantidad4" type="text" value="0" class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
                                     <button onclick="aumentar4()" class="btn btn-primary " id="aumentar">+</button>
                                 </div>
                             </div>
@@ -194,11 +189,10 @@
                     </tr>
                     <tr>
                         <th scope="row">
-                            <div onload="sumarCantidad()" class="cantidad">
+                            <div onload= "sumarCantidad()" class="cantidad">
                                 <div class="selector-cantidad">
                                     <button onclick="disminuir5()" class="btn btn-primary " id="disminuir">-</button>
-                                    <input id="cantidad5" type="text" value="0"
-                                        class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
+                                    <input id="cantidad5" type="text" value="0" class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
                                     <button onclick="aumentar5()" class="btn btn-primary " id="aumentar">+</button>
                                 </div>
                             </div>
@@ -236,11 +230,10 @@
                     </tr>
                     <tr>
                         <th scope="row">
-                            <div onload="sumarCantidad()" class="cantidad">
+                            <div onload= "sumarCantidad()" class="cantidad">
                                 <div class="selector-cantidad">
                                     <button onclick="disminuir6()" class="btn btn-primary " id="disminuir">-</button>
-                                    <input id="cantidad6" type="text" value="0"
-                                        class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
+                                    <input id="cantidad6" type="text" value="0" class="carrito-item-cantidad col-4 col-m-4 col-lg-2" disabled>
                                     <button onclick="aumentar6()" class="btn btn-primary " id="aumentar">+</button>
                                 </div>
                             </div>
@@ -280,9 +273,9 @@
             </table>
             <!-- Button trigger modal -->
             <div class="container text-center">
-                <button type="submit" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Pagar
-                </button>
+            <button type="submit" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Pagar
+            </button>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -304,22 +297,20 @@
                 </div>
             </div>
         </div>
-    
 
-        <div class="row">
-            <footer class="py-3 my-4">
-                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
-                    <li class="nav-item"><a href="https://www.Instagram.com" class="nav-link px-2 text-muted"
-                            target="_blank">Instagram</a></li>
-                    <li class="nav-item"><a href="https://www.Facebook.com" class="nav-link px-2 text-muted"
-                            target="_blank">Facebook</a></li>
-                </ul>
-                <p class="text-center text-muted">©2023 PawPetShop</p>
-            </footer>
-        </div>
-{% endblock %}
 
-{% block script %}
 
+
+    <div class="row">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="https://www.Instagram.com" class="nav-link px-2 text-muted"
+                        target="_blank">Instagram</a></li>
+                <li class="nav-item"><a href="https://www.Facebook.com" class="nav-link px-2 text-muted"
+                        target="_blank">Facebook</a></li>
+            </ul>
+            <p class="text-center text-muted">©2023 PawPetShop</p>
+        </footer>
+    </div>
 {% endblock %}
