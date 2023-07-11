@@ -193,7 +193,11 @@ function validarLogin() {
 
 var inicio = 0; 
 function aumentar(){ 
-var cantidad = document.getElementById('cantidad').value = ++inicio; 
+/*     if(inicio < 0){ */
+var cantidad = document.getElementById('cantidad').value = ++inicio;/*  }
+        else{
+            var inicio = 0; 
+        } */
 }
 function disminuir(){ 
 var cantidad = document.getElementById('cantidad').value = --inicio; 
