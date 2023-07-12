@@ -112,13 +112,3 @@ def eliminarProducto(request,sku):
     return redirect('/agregarProducto')
 
 
-def carrito(request):
-    #print("CARRITO",request.body)
-
-    productos = json.loads(request.body)
-
-    for p in productos:
-        print("SKU",p['sku'])
-        print("CANTIDAD",p['cantidad'])
-
-    return HttpResponse("Ok!")

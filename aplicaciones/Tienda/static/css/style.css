@@ -46,12 +46,14 @@
 #iconoAgregarEditar a{
     font-size: 20px;
     background: aquamarine;
+    border-radius: 30px;
     padding: 5px;
+    margin: 10px;
 }
 
 #iconoAgregarEditar a:hover{
     font-size: 25px;
     background: aquamarine;
     border-radius: 30px;
-    margin: 15px;
+    margin: 20px;
 }
