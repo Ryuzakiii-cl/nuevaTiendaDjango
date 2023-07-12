@@ -1,9 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import *
-import os
-from django.conf import settings
-from django.http import HttpResponse
-import json
+
 
 
 # Create your views here.
@@ -33,4 +29,6 @@ def veterinaria(request):
     return render(request, 'veterinaria.html')
 
 
+
+""" de aqui abajo todo es nuevo """
 
