@@ -4,20 +4,20 @@
 {% block body %}
     
 
-<div class="container text-center">
+<div id="iconoAgregarEditar" class="container text-center ">
     <div class="row align-items-start">
-        <div class="col">
-            <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}"><ion-icon
-                    name="add-circle"></ion-icon>
+        <div class="col" >
+            <a class="nav-link active" aria-current="page" href="{% url 'agregarProducto' %}"><ion-icon
+                    name="add-circle"></ion-icon>Agregar
             </a>
         </div>
         <div class="col">
             <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}"><ion-icon
-                    name="create"></ion-icon>
+                    name="create"></ion-icon>Editar
             </a>
         </div>
+
     </div>
-</div>
 </div>
 
 
@@ -30,7 +30,7 @@
         <div class="container">
             <h4 onload="mostrarHora()" class="hora" id="miReloj"></h4>
         </div>
-        <h1  id="titulo" class="text-center">Todos los Alimentos que tus mascotas necesitan</h1>
+        
         <div class="row">
             <div class="col mt-5">
                 <div class="pro1">

@@ -3,14 +3,14 @@
 
 
 {% block body %}
-    <h1 class="text-center">
+    <h1 class="text-center mb-5">
         Agregar Productos
     </h1>
-    <h1  id="titulo" class="text-center">Todos los Alimentos que tus mascotas necesitan</h1>
+
 
     <div class="container">
         <form id="agregarProductoForm" action="/agregarProductoForm" method="POST" enctype="multipart/form-data"> 
-          <!--   {% csrf_token %} -->
+<!--   {% csrf_token %} -->
             <div class="row">
                 <div class="col-md-4">
                     <label for="txtSku">SKU:</label>

@@ -37,7 +37,21 @@
 }
 
 .navbar a:hover{
-    border-radius: 10px;
+    border-radius: 20px;
     background: rgb(163, 165, 42);
 }
 
+
+
+#iconoAgregarEditar a{
+    font-size: 20px;
+    background: aquamarine;
+    padding: 5px;
+}
+
+#iconoAgregarEditar a:hover{
+    font-size: 25px;
+    background: aquamarine;
+    border-radius: 30px;
+    margin: 15px;
+}
