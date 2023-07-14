@@ -2,6 +2,7 @@
 {% load static %}
 
 
+
 {% block body %}
     {% load crispy_forms_tags %}
     <div class="container">
@@ -13,11 +14,11 @@
                     <div class="card-body">
                         <h2>Registrate</h2>
                         <hr>
-                        <form action="" method="post">
+                        <form action="" method="post" class="my-form-class">
 
                             {% csrf_token %}
                             {{ form }}
-                            <a href="{% url 'inicio' %}">Ir a inicio</a>
+                            <a href="{% url 'inicio' %}">Ir a inicio</a> 
                             <a href="{% url 'login' %}">Iniciar sesión</a>
                             <input type="submit" value="Registrar" class="btn btn-success float right">
 
