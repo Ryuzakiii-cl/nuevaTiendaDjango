@@ -5,6 +5,9 @@ from django.conf import settings
 from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_protect
+from .forms import CustomUserCreationForm
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 # Create your views here.
@@ -22,12 +25,7 @@ def cuidados(request):
     return render(request, 'cuidados.html')
 
 
-def login(request):
-    return render(request, 'login.html')
 
-
-def registro(request):
-    return render(request, 'registro.html')
 
 
 def veterinaria(request):
@@ -112,3 +110,20 @@ def eliminarProducto(request,sku):
     return redirect('/agregarProducto')
 
 
+def registro(request):
+    data = {
+        'form': CustomUserCreationForm()
+    }
+
+    if request.method == 'POST':
+        formulario = CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, user)
+            messages.success(request, "Registro completado con exito")
+            #redirigir al inicio
+            return redirect(to="inicio")
+        data["form"] = formulario
+
+    return render(request, 'registration/registro.html', data)

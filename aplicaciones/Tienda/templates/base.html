@@ -47,10 +47,25 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'carrito' %}"><ion-icon
                                 name="cart"></ion-icon> Compras</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'login' %}"><ion-icon
-                                name="person"></ion-icon> Ingresar</a>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="{% url 'logout' %}"><ion-icon
+                            name="person"></ion-icon> Cerrar sesión</a>
                     </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="#"><ion-icon
+                            name="person"></ion-icon>{{ user.username }}</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="{% url 'login' %}"><ion-icon
+                            name="person"></ion-icon> Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="{% url 'registro' %}"><ion-icon
+                            name="person"></ion-icon>Registrate</a>
+                    </li>
+                    {% endif %}
                     <div class="form-check form-switch mx-2 mt-2">
                         <input class="form-check-input p-2" type="checkbox" role="switch" id="flexSwitchCheckChecked"
                             checked onclick="cambiarTema()">
