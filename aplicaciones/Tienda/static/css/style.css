@@ -32,13 +32,13 @@
 }
 
 .navbar a{
-    font-size: 8px;
+    font-size: 15px;
 
 }
 
 .navbar a:hover{
     border-radius: 20px;
-    background: rgb(163, 165, 42);
+    background: rgba(57, 235, 152, 0.37);
 }
 
 
